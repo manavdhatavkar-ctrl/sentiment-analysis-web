@@ -1,0 +1,46 @@
+
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Sentiment Results</title>
+    <link
+        rel="stylesheet"
+        href="{{ url_for('static', filename='style.css') }}"
+    >
+</head>
+<body>
+    <main class="container">
+        <header class="page-header">
+            <p class="eyebrow">ANALYSIS COMPLETE</p>
+            <h1>Your Results</h1>
+            <p class="subtitle">Here's what TextBlob found in your text.</p>
+        </header>
+
+        <section class="analyzer-card">
+            <h2>Analyzed text</h2>
+            <p>{{ text }}</p>
+
+            <h2>Sentiment</h2>
+            <p><strong>{{ result.sentiment }}</strong></p>
+
+            <div class="info-grid">
+                <article class="info-card">
+                    <h3>Polarity</h3>
+                    <p>{{ result.polarity }}</p>
+                </article>
+
+                <article class="info-card">
+                    <h3>Subjectivity</h3>
+                    <p>{{ result.subjectivity }}</p>
+                </article>
+            </div>
+
+            <a class="back-link" href="{{ url_for('home') }}">
+                Analyze another text
+            </a>
+        </section>
+    </main>
+</body>
+</html>

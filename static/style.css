@@ -1,0 +1,154 @@
+
+* {
+    box-sizing: border-box;
+}
+
+body {
+    margin: 0;
+    font-family: "Segoe UI", Arial, sans-serif;
+    background: #f4f6fb;
+    color: #20243a;
+    line-height: 1.6;
+}
+
+.container {
+    width: min(100% - 32px, 900px);
+    margin: 0 auto;
+    padding: 56px 0;
+}
+
+.page-header {
+    text-align: center;
+    margin-bottom: 32px;
+}
+
+.eyebrow {
+    color: #6658d3;
+    font-size: 12px;
+    font-weight: 700;
+    letter-spacing: 2px;
+}
+
+h1 {
+    font-size: clamp(32px, 5vw, 46px);
+    line-height: 1.2;
+    margin: 12px 0;
+}
+
+.subtitle {
+    color: #687087;
+    margin: 0;
+}
+
+.analyzer-card {
+    background: #ffffff;
+    padding: 28px;
+    border-radius: 18px;
+    box-shadow: 0 12px 40px rgba(30, 40, 80, 0.07);
+}
+
+label {
+    display: block;
+    font-weight: 600;
+    margin-bottom: 10px;
+}
+
+textarea {
+    width: 100%;
+    padding: 15px;
+    border: 1px solid #dce1ed;
+    border-radius: 10px;
+    font: inherit;
+    resize: vertical;
+    outline: none;
+    transition: border-color 0.2s;
+}
+
+textarea:focus {
+    border-color: #6658d3;
+}
+
+button {
+    width: 100%;
+    margin-top: 16px;
+    padding: 14px;
+    border: none;
+    border-radius: 10px;
+    background: #6658d3;
+    color: white;
+    font: inherit;
+    font-weight: 700;
+    cursor: pointer;
+    transition: background 0.2s;
+}
+
+button:hover {
+    background: #5143bb;
+}
+
+.helper-text {
+    margin: 16px 0 0;
+    text-align: center;
+    font-size: 13px;
+    color: #858ba0;
+}
+
+.info-section {
+    margin-top: 42px;
+}
+
+.info-section h2 {
+    font-size: 21px;
+    text-align: center;
+    margin-bottom: 20px;
+}
+
+.info-grid {
+    display: grid;
+    grid-template-columns: repeat(3, minmax(0, 1fr));
+    gap: 16px;
+}
+
+.info-card {
+    padding: 20px;
+    background: #ffffff;
+    border: 1px solid #e8ebf3;
+    border-radius: 12px;
+}
+
+.info-card h3 {
+    margin: 0 0 8px;
+    font-size: 16px;
+}
+
+.info-card p {
+    margin: 0;
+    font-size: 14px;
+    color: #687087;
+}
+
+@media (max-width: 650px) {
+    .container {
+        padding: 36px 0;
+    }
+
+    .analyzer-card {
+        padding: 20px;
+    }
+
+    .info-grid {
+        grid-template-columns: 1fr;
+    }
+}
+
+.back-link {
+    display: inline-block;
+    margin-top: 24px;
+    color: #6658d3;
+    font-weight: 600;
+    text-decoration: none;
+}
+
+.back-link:hover {
+    text-decoration: underline;
+}

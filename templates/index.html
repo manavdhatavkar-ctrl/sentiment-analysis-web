@@ -1,0 +1,65 @@
+
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Sentiment Analysis</title>
+    <link
+        rel="stylesheet"
+        href="{{ url_for('static', filename='style.css') }}"
+    >
+</head>
+<body>
+    <main class="container">
+        <header class="page-header">
+            <p class="eyebrow">NATURAL LANGUAGE PROCESSING</p>
+            <h1>Sentiment Analysis</h1>
+            <p class="subtitle">
+                Discover the emotion and subjectivity behind your text.
+            </p>
+        </header>
+
+        <section class="analyzer-card">
+            <form action="{{ url_for('analyze') }}" method="POST">
+                <label for="text">Enter your text</label>
+
+                <textarea
+                    id="text"
+                    name="text"
+                    rows="6"
+                    placeholder="Write a review, opinion, or sentence..."
+                    required
+                ></textarea>
+
+                <button type="submit">Analyze Sentiment</button>
+            </form>
+
+            <p class="helper-text">
+                Powered by Python, Flask, and TextBlob.
+            </p>
+        </section>
+
+        <section class="info-section">
+            <h2>What you'll discover</h2>
+
+            <div class="info-grid">
+                <article class="info-card">
+                    <h3>Sentiment</h3>
+                    <p>Classifies text as positive, negative, or neutral.</p>
+                </article>
+
+                <article class="info-card">
+                    <h3>Polarity</h3>
+                    <p>Measures sentiment from -1 (negative) to +1 (positive).</p>
+                </article>
+
+                <article class="info-card">
+                    <h3>Subjectivity</h3>
+                    <p>Measures how subjective a statement is, from 0 to 1.</p>
+                </article>
+            </div>
+        </section>
+    </main>
+</body>
+</html>
