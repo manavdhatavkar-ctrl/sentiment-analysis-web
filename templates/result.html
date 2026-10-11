@@ -15,30 +15,61 @@
         <header class="page-header">
             <p class="eyebrow">ANALYSIS COMPLETE</p>
             <h1>Your Results</h1>
-            <p class="subtitle">Here's what TextBlob found in your text.</p>
+            <p class="subtitle">
+                Here's what TextBlob found in your text.
+            </p>
         </header>
 
         <section class="analyzer-card">
             <h2>Analyzed text</h2>
-            <p>{{ text }}</p>
+            <blockquote class="analyzed-text">{{ text }}</blockquote>
 
             <h2>Sentiment</h2>
-            <p><strong>{{ result.sentiment }}</strong></p>
 
-            <div class="info-grid">
-                <article class="info-card">
-                    <h3>Polarity</h3>
-                    <p>{{ result.polarity }}</p>
+            <span class="sentiment-badge {{ result.sentiment | lower }}">
+                {{ result.sentiment }}
+            </span>
+
+            <div class="scores">
+                <article class="score-card">
+                    <div class="score-heading">
+                        <h3>Polarity</h3>
+                        <strong>{{ "%.3f" | format(result.polarity) }}</strong>
+                    </div>
+
+                    <p class="score-description">
+                        Negative (-1) to positive (+1)
+                    </p>
+
+                    <div class="polarity-track">
+                        <div
+                            class="polarity-marker"
+                            style="left: {{ ((result.polarity + 1) / 2 * 100) }}%;"
+                        ></div>
+                    </div>
                 </article>
 
-                <article class="info-card">
-                    <h3>Subjectivity</h3>
-                    <p>{{ result.subjectivity }}</p>
+                <article class="score-card">
+                    <div class="score-heading">
+                        <h3>Subjectivity</h3>
+                        <strong>{{ "%.3f" | format(result.subjectivity) }}</strong>
+                    </div>
+
+                    <p class="score-description">
+                        Objective (0) to subjective (1)
+                    </p>
+
+                    <div class="score-track">
+                        <div
+                            class="score-fill"
+                            style="width: {{ result.subjectivity * 100 }}%;"
+                        ></div>
+                    </div>
                 </article>
             </div>
 
             <a class="back-link" href="{{ url_for('home') }}">
-                Analyze another text
+                ← Analyze another text
             </a>
         </section>
     </main>
